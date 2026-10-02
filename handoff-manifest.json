@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "adapta-cliente-handoff/v1",
+  "phase": 1,
+  "versions": {
+    "package": "0.9.3",
+    "adapta": "0.9.3",
+    "adaptaCliente": "0.9.3"
+  },
+  "generatedAt": "2026-10-02T18:57:11.569Z",
+  "files": [
+    {
+      "path": "04_fase-atual/fase.md",
+      "sha256": "1d71c5710dd8ab9dbcee3c8981143cc25b237158819e7dc3715cef63c25162eb",
+      "classification": "fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-001.md",
+      "sha256": "4ded3d017cc9e61550188ddcb08ad8ff746a9cf99a69ab293ae9a22a3b745e6d",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-002.md",
+      "sha256": "832a7bb58a7cac15a2f036e7f2da807e4213a5fc323b5c40234293a133aab14a",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-003.md",
+      "sha256": "c61a6e8c58e0e59df244a7bfd54f014a5879ba4ade962829f748e381bb1f6f2d",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-004.md",
+      "sha256": "209ef023be789d9e31f4fcd04247a5beb0d7825efbf8616a2175525b8e88ca44",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-005.md",
+      "sha256": "2161bf51eb23f4bf2850383d9568074ee723ed275d5c3af7131225a092bcb5df",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-006.md",
+      "sha256": "439961b09c2260e84f7e1ecbf5b70244c432e4fc4aa7294d2c1412dc2e6b6c43",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/spec-1-007.md",
+      "sha256": "980d01ff79a2d1b98da4223bcb743c3513987532b9acca3ae96f6d9ed88a0d9b",
+      "classification": "spec-fase-atual"
+    }
+  ]
+}
