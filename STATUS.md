@@ -1,17 +1,18 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** implementação da T1.1 autorizada por Kim em 02/10/2026; conclusão pendente de evidências e teste humano
-**Atualizado em:** 2026-10-02
+**Estado:** 1 de 16 tasks concluída (T1.1, 06%); próxima elegível: T1.2
+**Atualizado em:** 2026-10-05
 
 ## Ambiente e progresso
 
 - Ambiente de implementação/homologação: Skip, projeto **63138**. Produção não autorizada nesta liberação.
-- O levantamento compartilhado com Kim em 02/10 reporta uma carcaça v0.0.1 com login, recuperação de senha e verificação de e-mail; convite e papéis ainda não implementados. Há alteração pendente em `.skip.config.json`.
-- Esse levantamento corrige a descrição inicial de ausência total de implementação. Não constitui auditoria independente nem aceite da SPEC-1-001/T1.1.
-- T1.1: autorizada para implementação, não concluída. O login existente só pode ser aproveitado após confronto com o contrato da SPEC-1-001.
-- T1.2 e demais tasks mantêm suas dependências; esta liberação não declara seus critérios atendidos.
+- **T1.1 concluída (2026-10-05):** convite/ativação/login/perfis mínimos implementados no Skip 63138 — migração 0002 (campo role, coleção invites, fixture sintética, rotação da credencial exposta), hooks de convite (criar/listar/aceitar), telas /convites e /ativar-acesso, Dashboard com papel real, dica de credencial demo removida do login. Versões v0.0.2→v0.0.4 (9727684), QA ok.
+- **Segurança:** cadastro público fechado (só superusuário/convite), autoatribuição de papel bloqueada server-side, token de convite hasheado com expiração 48h e uso único. Provas negativas registradas no relatório `artifacts/benera-p1/t1.1-relatorio.md` (anônimo 403, rotas de convite 401, token inválido 400, credencial exposta invalidada).
+- **Teste humano:** aprovado pelo champion em 2026-10-05 09:4x — reset de senha e login funcionando após correção dos templates de e-mail (host do preview literal durante homologação; dívida registrada para reverter quando a produção for publicada).
+- **CA-1-002 NÃO declarado atendido:** matriz inicial de papéis (admin configura; consultor não; líder/revisor deny-default) aguarda validação operacional da Benera.
+- T1.2 e demais tasks mantêm suas dependências; esta conclusão não declara seus critérios atendidos.
 
 ## Próxima ação
 
-Seguir `06_notas/2026-10-02-autorizacao-t1-1.md`: preparar fixture sintética, explicitar/validar a matriz inicial de papéis, corrigir as exposições de acesso e completar convite/login/perfis. Homologação e produção permanecem bloqueadas até as provas de segurança e o teste humano.
+Champion solicita a próxima task quando quiser (T1.2 é a elegível por dependência). Validar operacionalmente a matriz de papéis segue pendente da Benera.

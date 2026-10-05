@@ -60,7 +60,7 @@ Um administrador convida usuários; cadastra cliente e projeto; configura o flux
 
 | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 |---|---|---|---|---|---|---|---|---|
-| T1.1 | Implementar convite, login e perfis mínimos da Fase 1 com usuários sintéticos | Ethos | SPEC-1-001 | CA-1-001/CA-1-002: convite, ativação e matriz de papéis funcionam | GREEN da SPEC-1-001 — convite/login e matriz de papéis | capturas de login por papel + matriz de permissões | repositório/ambiente de homologação disponível; fixture F1 criada | a fazer |
+| T1.1 | Implementar convite, login e perfis mínimos da Fase 1 com usuários sintéticos | Ethos | SPEC-1-001 | CA-1-001/CA-1-002: convite, ativação e matriz de papéis funcionam | GREEN da SPEC-1-001 — convite/login e matriz de papéis | capturas de login por papel + matriz de permissões | repositório/ambiente de homologação disponível; fixture F1 criada | concluída 2026-10-05 — CA-1-001 com teste humano aprovado (reset + login); CA-1-002 aguarda validação operacional da matriz (não declarado) |
 | T1.2 | Aplicar autorização server-side por workspace/projeto, revogação e auditoria de acesso | Ethos | SPEC-1-001 | CA-1-003/CA-1-004/CA-1-005/CA-1-006: acesso cruzado negado, revogação efetiva, eventos auditados e nenhum segredo exposto | RED/GREEN/REGRESSÃO — tentativas diretas, revogação e inspeção de logs | logs sanitizados e prova negativa de usuário sem vínculo/segredo | T1.1 concluída | a fazer |
 | T1.3 | Criar modelo e CRUD mínimo de cliente, tipo de serviço e projeto | Ethos | SPEC-1-002 | CA-1-007: cliente/projeto são criados com campos mínimos | GREEN da SPEC-1-002 — criação com ACME-FIXTURE/PROJ-F1-001 | registros persistidos e captura do formulário/cartão inicial | ambiente disponível; fixture F1 criada | a fazer |
 | T1.4 | Implementar cartão 360, listagem, filtros e inativação preservando histórico | Ethos | SPEC-1-002 | CA-1-008..CA-1-011: cartão completo, filtros, auditoria e inativação | GREEN + REFACTOR/REGRESSÃO da SPEC-1-002 | capturas do cartão/filtros + timeline de alteração/inativação | T1.2 e T1.3 concluídas | a fazer |
@@ -79,4 +79,4 @@ Um administrador convida usuários; cadastra cliente e projeto; configura o flux
 
 ## Estado da fase
 
-A Fase 1 está documentalmente pronta para handoff. Nenhuma task está concluída e nenhuma implementação foi executada nesta geração.
+T1.1 concluída em 2026-10-05 (Skip 63138 v0.0.4, QA ok; teste humano aprovado pelo champion; CA-1-001 com evidência, CA-1-002 pendente de validação da matriz). Demais tasks a fazer; nenhuma fase avançou.
