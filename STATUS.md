@@ -1,18 +1,19 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 1 de 16 tasks concluída (T1.1, 06%); próxima elegível: T1.2
+**Estado:** 2 de 16 tasks concluídas (T1.1 e T1.2, 13%); próxima elegível: T1.3
 **Atualizado em:** 2026-10-05
 
 ## Ambiente e progresso
 
 - Ambiente de implementação/homologação: Skip, projeto **63138**. Produção não autorizada nesta liberação.
-- **T1.1 concluída (2026-10-05):** convite/ativação/login/perfis mínimos implementados no Skip 63138 — migração 0002 (campo role, coleção invites, fixture sintética, rotação da credencial exposta), hooks de convite (criar/listar/aceitar), telas /convites e /ativar-acesso, Dashboard com papel real, dica de credencial demo removida do login. Versões v0.0.2→v0.0.4 (9727684), QA ok.
-- **Segurança:** cadastro público fechado (só superusuário/convite), autoatribuição de papel bloqueada server-side, token de convite hasheado com expiração 48h e uso único. Provas negativas registradas no relatório `artifacts/benera-p1/t1.1-relatorio.md` (anônimo 403, rotas de convite 401, token inválido 400, credencial exposta invalidada).
-- **Teste humano:** aprovado pelo champion em 2026-10-05 09:4x — reset de senha e login funcionando após correção dos templates de e-mail (host do preview literal durante homologação; dívida registrada para reverter quando a produção for publicada).
-- **CA-1-002 NÃO declarado atendido:** matriz inicial de papéis (admin configura; consultor não; líder/revisor deny-default) aguarda validação operacional da Benera.
-- T1.2 e demais tasks mantêm suas dependências; esta conclusão não declara seus critérios atendidos.
+- **T1.1 concluída (2026-10-05):** convite/ativação/login/perfis mínimos — migração 0002 (role, invites, fixture sintética, rotação da credencial exposta), hooks de convite, telas /convites e /ativar-acesso. Versões v0.0.2→v0.0.4, QA ok.
+- **T1.2 concluída (2026-10-05):** autorização server-side por projeto, revogação e auditoria — migração 0003 (project_members, audit_log), 5 hooks (conceder/revogar/verificar acesso/listar membros/auditoria), senha fixture via segredo FIXTURE_TEST_PASSWORD. Versões v0.0.5→v0.0.7 (25123f4), QA ok.
+- **Provas T1.2:** RED (403 sem vínculo, 403 auto-concessão, 401 sem auth), GREEN (201 concessão, 200 acesso com papel), REGRESSÃO (revogação efetiva → 403), AUDITORIA (member_granted/member_revoked/access_denied com ator+horário). CA-1-003..006 com evidência; nenhum segredo em código/log/evidência.
+- **Teste humano:** aprovado pelo champion ao vivo (9 passos da matriz de papéis); erro de e-mail duplicado no convite confirmado como caminho de erro correto da SPEC.
+- **Pendência registrada:** UI de gestão de membros (conceder/revogar pela tela) entra na T1.3 — decisão documentada de recorte (server-side na T1.2, UI na task de CRUD de projetos).
+- T1.3 e demais tasks mantêm suas dependências.
 
 ## Próxima ação
 
-Champion solicita a próxima task quando quiser (T1.2 é a elegível por dependência). Validar operacionalmente a matriz de papéis segue pendente da Benera.
+Champion solicita a próxima task quando quiser (T1.3 é a elegível por dependência).
