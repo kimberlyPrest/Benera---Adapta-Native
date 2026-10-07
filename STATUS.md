@@ -1,7 +1,7 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 3 de 16 tasks concluídas (T1.1, T1.2 e T1.3, 19%); próxima elegível: T1.4
+**Estado:** 4 de 16 tasks concluídas (T1.1–T1.4, 25%); próxima elegível: T1.5
 **Atualizado em:** 2026-10-07
 
 ## Ambiente e progresso
@@ -13,8 +13,10 @@
 - **Teste humano:** aprovado pelo champion ao vivo (9 passos da matriz de papéis); erro de e-mail duplicado no convite confirmado como caminho de erro correto da SPEC.
 - **Pendência registrada:** UI de gestão de membros (conceder/revogar pela tela) entra na T1.3 — decisão documentada de recorte (server-side na T1.2, UI na task de CRUD de projetos).
 - **T1.3 concluída (2026-10-07):** modelo e CRUD mínimo de cliente, tipo de serviço e projeto — migração 0005 (clients/service_types/projects + fixture ACME-FIXTURE/PROJ-F1-001 + 4 tipos de serviço provisórios), 4 hooks server-side (clientes-criar, projetos-criar, catalogos-listar, usuarios-listar), tela /projetos com 3 abas (Novo projeto · Novo cliente · Alocar membro) e botão Projetos no Dashboard para admin e líder. Versões v0.0.8→v0.0.11, QA ok. Matriz validada pelo champion (05/10): admin e líder cadastram; consultor e revisor negados (403). Provas: campos obrigatórios 400 com detalhe por campo, duplicados 400, fixture persistida, vínculo fantasma 400 (higiene herdada da T1.2), deleção física não exposta. Teste humano aprovado pelo champion (cadastro e alocação pela tela, incluindo projeto real PROJETO_KLABIN_001). Pendência da T1.2 fechada. CA-1-007 com evidência.
-- T1.4 e demais tasks mantêm suas dependências.
+- **Fix alocação (v0.0.12, 2026-10-07):** select de projetos cadastrados substitui campo de texto livre na alocação — causa raiz do erro do champion (chave digitada ≠ cadastrada; duplicado BENERA-KLABIN-OO1/PROJETO_KLABIN_001 mantido a pedido, inativável pela tela).
+- **T1.4 concluída (2026-10-07):** cartão 360, listagem, filtros e inativação — migração 0006 (audit_log.action + project_updated/project_archived), hooks de listagem com filtros (etapa/responsável/prioridade/atraso) e escopo por vínculo, cartão 360, edição auditada (antes→depois com ator e horário), inativação sem deleção física e timeline por projeto. Front: aba Carteira (primeira), dialog do cartão com edição e histórico, botão "Meus projetos" para consultor/revisor. Versões v0.0.13→v0.0.16, QA ok. Teste humano aprovado pelo champion. CA-1-008..011 com evidência.
+- T1.5 e demais tasks mantêm suas dependências.
 
 ## Próxima ação
 
-Champion solicita a próxima task quando quiser (T1.4 é a elegível por dependência).
+Champion solicita a próxima task quando quiser (T1.5 é a elegível por dependência).

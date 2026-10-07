@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-10-07
+- Task T1.4 concluída: cartão 360, listagem, filtros e inativação no Skip 63138 (v0.0.13→v0.0.16, QA ok). Migração 0006 (audit_log.action estendido), hooks de listagem com filtros e escopo por vínculo, cartão 360, edição auditada (antes→depois), inativação sem deleção física, timeline por projeto. Front: aba Carteira + dialog do cartão + "Meus projetos" para consultor/revisor. Teste humano aprovado pelo champion. CA-1-008..011 com evidência. Fix prévio v0.0.12: select de projetos na alocação (elimina chave fantasma por digitação; duplicado BENERA-KLABIN-OO1 mantido, inativável pela tela).
 - Task T1.3 concluída: modelo e CRUD mínimo de cliente, tipo de serviço e projeto no Skip 63138 (v0.0.8→v0.0.11, QA ok). Migração 0005 (clients/service_types/projects + fixture ACME-FIXTURE/PROJ-F1-001 + tipos provisórios), 4 hooks server-side, tela /projetos (3 abas) e botão Projetos no Dashboard (admin e líder). Matriz validada pelo champion: admin/líder cadastram; consultor/revisor 403. Provas GREEN/RED/REGRESSÃO aprovadas (campos obrigatórios, duplicados, fixture, vínculo fantasma 400). Teste humano aprovado pelo champion (cadastro + alocação pela tela, projeto real PROJETO_KLABIN_001). Pendência da T1.2 (UI de membros) fechada. CA-1-007 com evidência.
 
 ## 2026-10-05
@@ -12,7 +13,7 @@
 ## 2026-10-02
 - Handoff inicial da Fase 1 aprovado e publicado (7 SPECs, 42 critérios de aceite, 16 tasks em 11 levas).
 - Escopo definitivo incluído na raiz como `02-Escopo-Definitivo.md`.
-- Registrado o levantamento compartilhado com Kim: carcaça de autenticação carcaça existente no Skip 63138; convite e papéis ainda pendentes. Não equivale ao aceite da T1.1.
+- Registrado o levantamento compartilhado com Kim: carcaça de autenticação existente no Skip 63138; convite e papéis ainda pendentes. Não equivale ao aceite da T1.1.
 - Kim autorizou implementar a T1.1 no ambiente Skip 63138, preservando seus critérios e o gate de validação da matriz/fixture.
 - Cadastro público e credencial de demonstração exposta registrados como impedimentos de homologação, a corrigir sem publicar valores de segredos.
 - Autorização, limites e roteiro de prova em `06_notas/2026-10-02-autorizacao-t1-1.md`. Nenhum código, segredo ou configuração do Skip foi alterado por esta publicação documental.
