@@ -1,8 +1,8 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 4 de 16 tasks concluídas (T1.1–T1.4, 25%); próxima elegível: T1.5
-**Atualizado em:** 2026-10-07
+**Estado:** 6 de 16 tasks concluídas (T1.1–T1.6, 38%); próxima elegível: T1.7
+**Atualizado em:** 2026-10-13
 
 ## Ambiente e progresso
 
@@ -15,8 +15,10 @@
 - **T1.3 concluída (2026-10-07):** modelo e CRUD mínimo de cliente, tipo de serviço e projeto — migração 0005 (clients/service_types/projects + fixture ACME-FIXTURE/PROJ-F1-001 + 4 tipos de serviço provisórios), 4 hooks server-side (clientes-criar, projetos-criar, catalogos-listar, usuarios-listar), tela /projetos com 3 abas (Novo projeto · Novo cliente · Alocar membro) e botão Projetos no Dashboard para admin e líder. Versões v0.0.8→v0.0.11, QA ok. Matriz validada pelo champion (05/10): admin e líder cadastram; consultor e revisor negados (403). Provas: campos obrigatórios 400 com detalhe por campo, duplicados 400, fixture persistida, vínculo fantasma 400 (higiene herdada da T1.2), deleção física não exposta. Teste humano aprovado pelo champion (cadastro e alocação pela tela, incluindo projeto real PROJETO_KLABIN_001). Pendência da T1.2 fechada. CA-1-007 com evidência.
 - **Fix alocação (v0.0.12, 2026-10-07):** select de projetos cadastrados substitui campo de texto livre na alocação — causa raiz do erro do champion (chave digitada ≠ cadastrada; duplicado BENERA-KLABIN-OO1/PROJETO_KLABIN_001 mantido a pedido, inativável pela tela).
 - **T1.4 concluída (2026-10-07):** cartão 360, listagem, filtros e inativação — migração 0006 (audit_log.action + project_updated/project_archived), hooks de listagem com filtros (etapa/responsável/prioridade/atraso) e escopo por vínculo, cartão 360, edição auditada (antes→depois com ator e horário), inativação sem deleção física e timeline por projeto. Front: aba Carteira (primeira), dialog do cartão com edição e histórico, botão "Meus projetos" para consultor/revisor. Versões v0.0.13→v0.0.16, QA ok. Teste humano aprovado pelo champion. CA-1-008..011 com evidência.
-- T1.5 e demais tasks mantêm suas dependências.
+- **T1.5 concluída (2026-10-13):** esteira configurável com versão e rollback — migração 0007 (pipeline_stages/pipeline_versions, stage vira texto, kickoff_date+pipeline_version no projeto), hooks (listar/editar com diff/restaurar/transição com critérios de entrada), tela Esteira (editar nome/ordem/critérios, incluir/remover etapa, prioridades configuráveis via migração 0008, histórico com Restaurar). 11 versões preservadas. Vínculo automático do responsável ao criar/editar projeto (v0.0.32). Teste humano aprovado. CA-1-012/013/018 com evidência.
+- **T1.6 concluída (2026-10-13):** Kanban/Lista na Carteira — colunas por etapa da esteira ativa, botão Avançar no card (mesmo motor com critérios), campo de data quando o destino exige kick-off, transições auditadas com ator/horário e versão da esteira. Consultor/revisor transicionam em projetos com vínculo (SPEC-1-003 linha 11); sem vínculo 403 auditado. Card encerrado permanece no quadro (coluna Encerrado). Migração 0009 (stage/priority select→text). Teste humano aprovado. CA-1-014..017 com evidência.
+- T1.7 e demais tasks mantêm suas dependências.
 
 ## Próxima ação
 
-Champion solicita a próxima task quando quiser (T1.5 é a elegível por dependência).
+Champion solicita a próxima task quando quiser (T1.7 é a elegível por dependência).
