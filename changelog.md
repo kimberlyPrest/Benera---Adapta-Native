@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-10-13
+- 2026-10-13 · [champion] · Task T1.7 concluída: tarefas e checklists com responsável, prazo, status e evidência esperada (v0.0.39, QA ok). CA-1-019/020 provados RED/GREEN do zero; teste humano aprovado no reteste ("Retestei e funcionou"). Debugs: dropdown de responsável no perfil do consultor (usuarios-listar parcial sem email/papel) e fuso BRT na validação de prazo.
+- 2026-10-13 · [verificação] · DEBUG revalidação: prazo de "hoje" recusado às 21h BRT — comparação usava data UTC (já virou o dia) → corrigido para Brasília (UTC-3) em tarefas-criar e tarefas-listar (v0.0.39).
+- 2026-10-13 · [champion] · DEBUG task T1.7: dropdown de responsável vazio e botão de criar tarefa morto no perfil do consultor → causa raiz: hook usuarios-listar (T1.3) só liberava admin/líder (403 p/ consultor) e o front enviava assignee_id vazio → corrigido (v0.0.38): consultor/revisor recebem lista parcial sem email/papel; dropdown filtra revisores.
 - Task T1.5 concluída: esteira configurável com versão e rollback no Skip 63138 (v0.0.17→v0.0.34, QA ok). Migrações 0007 (pipeline_stages/pipeline_versions) e 0008 (priorities). Painel Esteira (editar/ordenar/critérios/incluir etapa, prioridades configuráveis, histórico com diff e Restaurar). Motor de transição com critérios de entrada (kickoff_date). Vínculo automático do responsável. Teste humano aprovado. CA-1-012/013/018 com evidência.
 - Task T1.6 concluída: Kanban/Lista na Carteira (v0.0.28→v0.0.34, QA ok). Colunas por etapa, Avançar no card, bloqueio auditado, consultor/revisor movem com vínculo, card encerrado permanece no quadro. Migração 0009 (stage/priority → text). Teste humano aprovado. CA-1-014..017 com evidência.
 - Debugs: dropdown vazio no consultor (Promise.all agrupava endpoint só-admin — 403 derrubava carregamento; corrigido v0.0.33); card encerrado sumia do Kanban (listagem filtrava active=true; corrigido v0.0.34 com encerrados=1); vínculo automático do responsável (v0.0.32).
