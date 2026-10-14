@@ -1,8 +1,8 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 7 de 16 tasks concluídas (T1.1–T1.7, 44%); próxima elegível: T1.8
-**Atualizado em:** 2026-10-13
+**Estado:** 8 de 16 tasks concluídas (T1.1–T1.8, 50%); SPEC-1-004 fecha na T1.9; próxima elegível: T1.9
+**Atualizado em:** 2026-10-14
 
 ## Ambiente e progresso
 
@@ -18,8 +18,9 @@
 - **T1.5 concluída (2026-10-13):** esteira configurável com versão e rollback — migração 0007 (pipeline_stages/pipeline_versions, stage vira texto, kickoff_date+pipeline_version no projeto), hooks (listar/editar com diff/restaurar/transição com critérios de entrada), tela Esteira (editar nome/ordem/critérios, incluir/remover etapa, prioridades configuráveis via migração 0008, histórico com Restaurar). 11 versões preservadas. Vínculo automático do responsável ao criar/editar projeto (v0.0.32). Teste humano aprovado. CA-1-012/013/018 com evidência.
 - **T1.6 concluída (2026-10-13):** Kanban/Lista na Carteira — colunas por etapa da esteira ativa, botão Avançar no card (mesmo motor com critérios), campo de data quando o destino exige kick-off, transições auditadas com ator/horário e versão da esteira. Consultor/revisor transicionam em projetos com vínculo (SPEC-1-003 linha 11); sem vínculo 403 auditado. Card encerrado permanece no quadro (coluna Encerrado). Migração 0009 (stage/priority select→text). Teste humano aprovado. CA-1-014..017 com evidência.
 - **T1.7 concluída (2026-10-13):** tarefas e checklists — migrações 0010 (tasks/task_items, regras nulas, status TEXT) e 0011 (audit task_created/updated/completed); hooks tarefas-criar/tarefas-listar/tarefas-atualizar (escopo por vínculo; conclusão recusada com item obrigatório pendente, 400 nomeando o item; prazo no passado recusado); seção Tarefas no cartão 360 (criar com checklist — linhas com * = obrigatórias, marcar item, concluir/reabrir). Debugs: dropdown de responsável para consultor (hook usuarios-listar agora entrega lista parcial sem email/papel — v0.0.38) e fuso BRT na comparação de prazo (v0.0.39). Teste humano aprovado no reteste. CA-1-019/020 com evidência.
-- T1.8 e demais tasks mantêm suas dependências.
+- **T1.8 concluída (2026-10-14):** bloqueio, retorno e handoff idempotente — migração 0013 (handoffs com handoff_key ÚNICA + campos de bloqueio/retorno na task + 5 eventos de auditoria), hook handoff-criar (1ª chamada 201, retry 200 sem duplicata, tentativa conservada), handoff automático na transição (chave determinística etapa:{projeto}:{destino}), tarefas-atualizar com bloqueio (motivo+dono+data obrigatórios, recusa sem alterar) e retorno para correção (motivo obrigatório, responsável preservado), tarefas-listar expõe bloqueio, UI com formulário de bloqueio/badge/Devolução. Debug crítico: cache de hooks no pod é POR ARQUIVO (patch não recarrega; reescrita completa força reload — v0.0.44/45/46). Teste humano aprovado. CA-1-021..023 com evidência.
+- T1.9 e demais tasks mantêm suas dependências.
 
 ## Próxima ação
 
-Champion solicita a próxima task quando quiser (T1.8 é a elegível por dependência).
+Champion solicita a próxima task quando quiser (T1.9 é a elegível por dependência — fecha a SPEC-1-004).
