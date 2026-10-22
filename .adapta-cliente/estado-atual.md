@@ -5,9 +5,9 @@
 - spec: 04_fase-atual/specs/spec-1-005.md
 - etapa: aguardando_teste_humano
 - autorizacao_implementacao: confirmada — 2026-10-14 14:58, champion: "Pode implementar a T1.10"
-- teste_humano: pendente
-- verificacao_automatica: passou — v0.0.51 (40c6164), QA ok; 16 provas PASSOU (05_entregas/t1.10-relatorio.md)
+- teste_humano: pendente — 1º teste: "não achei as notas"; debug provou seção renderizada (e2e navegador); melhorias v0.0.52/53
+- verificacao_automatica: passou — v0.0.53 (0360064), QA ok; 16 provas PASSOU + e2e no navegador
 - aprendizado: pendente
-- ultima_acao: implementação verificada (workspace com 4 tipos, edição auditada, inativação preservando evento)
-- proxima_acao: aguardar teste humano do champion
-- atualizado_em: 2026-10-14T15:20:00-03:00
+- ultima_acao: debug concluído (06_notas/debug/2026-10-22-t110-notas-nao-encontradas.md)
+- proxima_acao: aguardar reteste humano do champion
+- atualizado_em: 2026-10-22T16:40:00-03:00
