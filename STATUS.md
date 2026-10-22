@@ -1,7 +1,7 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 8 de 16 tasks concluídas (T1.1–T1.8, 50%); SPEC-1-004 fecha na T1.9; próxima elegível: T1.9
+**Estado:** 9 de 16 tasks concluídas (T1.1–T1.9, 56%); SPEC-1-004 COMPLETA (CA-1-019..025); próxima elegível: T1.10
 **Atualizado em:** 2026-10-14
 
 ## Ambiente e progresso
@@ -19,8 +19,9 @@
 - **T1.6 concluída (2026-10-13):** Kanban/Lista na Carteira — colunas por etapa da esteira ativa, botão Avançar no card (mesmo motor com critérios), campo de data quando o destino exige kick-off, transições auditadas com ator/horário e versão da esteira. Consultor/revisor transicionam em projetos com vínculo (SPEC-1-003 linha 11); sem vínculo 403 auditado. Card encerrado permanece no quadro (coluna Encerrado). Migração 0009 (stage/priority select→text). Teste humano aprovado. CA-1-014..017 com evidência.
 - **T1.7 concluída (2026-10-13):** tarefas e checklists — migrações 0010 (tasks/task_items, regras nulas, status TEXT) e 0011 (audit task_created/updated/completed); hooks tarefas-criar/tarefas-listar/tarefas-atualizar (escopo por vínculo; conclusão recusada com item obrigatório pendente, 400 nomeando o item; prazo no passado recusado); seção Tarefas no cartão 360 (criar com checklist — linhas com * = obrigatórias, marcar item, concluir/reabrir). Debugs: dropdown de responsável para consultor (hook usuarios-listar agora entrega lista parcial sem email/papel — v0.0.38) e fuso BRT na comparação de prazo (v0.0.39). Teste humano aprovado no reteste. CA-1-019/020 com evidência.
 - **T1.8 concluída (2026-10-14):** bloqueio, retorno e handoff idempotente — migração 0013 (handoffs com handoff_key ÚNICA + campos de bloqueio/retorno na task + 5 eventos de auditoria), hook handoff-criar (1ª chamada 201, retry 200 sem duplicata, tentativa conservada), handoff automático na transição (chave determinística etapa:{projeto}:{destino}), tarefas-atualizar com bloqueio (motivo+dono+data obrigatórios, recusa sem alterar) e retorno para correção (motivo obrigatório, responsável preservado), tarefas-listar expõe bloqueio, UI com formulário de bloqueio/badge/Devolução. Debug crítico: cache de hooks no pod é POR ARQUIVO (patch não recarrega; reescrita completa força reload — v0.0.44/45/46). Teste humano aprovado. CA-1-021..023 com evidência.
-- T1.9 e demais tasks mantêm suas dependências.
+- **T1.9 concluída (2026-10-14):** fila individual — hook fila-listar (GET /backend/v1/minhas-tarefas: as PRÓPRIAS tarefas do usuário autenticado em todos os projetos com vínculo e ativos; filtro sempre pelo token, query ignorada; contagens por estado; atraso com fuso BRT; fila é LEITURA) e tela MinhaFila (/fila: 4 blocos Vencidas·Bloqueadas·Pendentes·Concluídas com contagens no banner, card com projeto/etapa/prazo/evidência/badges, link para o cartão 360; botão "Minha fila" no Dashboard para todos os papéis). Revalidação do zero: transição de estado provada (pendente→concluída com contagens 3→2 e 5→6). Teste humano aprovado. CA-1-024/025 com evidência. SPEC-1-004 COMPLETA.
+- T1.10 e demais tasks mantêm suas dependências.
 
 ## Próxima ação
 
-Champion solicita a próxima task quando quiser (T1.9 é a elegível por dependência — fecha a SPEC-1-004).
+Champion solicita a próxima task quando quiser (T1.10 é a elegível por dependência — abre a SPEC-1-005, workspace interno).

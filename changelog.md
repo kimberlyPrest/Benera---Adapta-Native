@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-10-14
+- 2026-10-14 · [champion] · Task T1.9 concluída: fila individual, vencidos e bloqueados (v0.0.48, QA ok). CA-1-024/025 provados GREEN/RED do zero + revalidação (transição de estado na fila: pendente→concluída com contagens batendo); teste humano aprovado ("Testei e funcionou"). Fila = filtro pelo token (ninguém vê fila alheia), leitura pura. SPEC-1-004 COMPLETA (CA-1-019..025).
 - 2026-10-14 · [champion] · Task T1.8 concluída: bloqueio, retorno para correção e handoff idempotente (v0.0.47, QA ok). CA-1-021/022/023 provados RED/GREEN do zero + revalidação completa; teste humano aprovado ("Testei e funcionou"). Handoff manual e automático (transição) idempotentes — retry identificado, 0 duplicatas, tentativa conservada na auditoria.
 - 2026-10-13 · [verificação] · DEBUG task T1.8: pod servia hooks antigos com QA verde (rota de handoff 404, status bloqueada recusado com mensagem antiga) → causa raiz: cache de hooks por arquivo (patch não recarrega) → corrigido com reescrita completa dos hooks (v0.0.44/45/46); regra registrada.
 

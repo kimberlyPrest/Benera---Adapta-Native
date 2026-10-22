@@ -9,3 +9,5 @@
 - 2026-10-13T21:00:00-03:00 · task T1.7 · capturado · AP-2026-10-13-t17-bool-required.md (bool required rejeita false — migração 0012)
 - 2026-10-13T21:05:00-03:00 · task T1.7 · capturado · AP-2026-10-13-t17-relacao-mesma-migracao.md (relação p/ coleção da mesma migração — 0010)
 - 2026-10-13T21:10:00-03:00 · task T1.7 · capturado · AP-2026-10-13-t17-fuso-comparacoes.md ("hoje" é BRT/UTC-3, não UTC — v0.0.39)
+- 2026-10-13T21:50:00-03:00 · task T1.8 · capturado · AP-2026-10-13-t18-cache-hooks.md (cache de hooks por arquivo: reescrever, não patchar — v0.0.44/45/46)
+- 2026-10-14T13:20:00-03:00 · task T1.9 · capturado · AP-2026-10-14-t19-fila-token.md (fila pessoal: filtro pelo token, query ignorada — v0.0.48)
