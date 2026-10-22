@@ -1,9 +1,11 @@
 # Changelog
 
 ## 2026-10-22
+- 2026-10-22 · [implementação] · Task T1.11 implementada (v0.0.54, QA ok) — permissões herdadas e fallback manual. CA-1-029: RED provado (revisor sem vínculo 403 nos 3 endpoints + timeline + coleção direta, auditado); ciclo de herança conceder→lê→revogar→403 com estado da fixture restaurado. CA-1-030: migração 0015 (origem_pendente + workspace_completado), documento sem URL nasce pendente, badge âmbar na UI, edição completa o item. Edição concorrente provada (última vence, 2 atores auditados). AGUARDANDO TESTE HUMANO.
 - 2026-10-22 · [champion] · Task T1.10 concluída: notas internas, comentários, documentos/links e registro de entrega (v0.0.53, QA ok). CA-1-026/027/028 provados GREEN/RED do zero + revalidação; teste humano aprovado no reteste ("Retestei e funcionou"). Debug: seção no fim do cartão após 27 tarefas de teste (descobribilidade) + bundle cacheado — e2e no navegador provou; faxina das tarefas de teste recomendada.
 
 ## 2026-10-14
+- 2026-10-14 · [champion] · DEBUG task T1.10: "não achei as notas" → causa raiz: seção Workspace no fim do cartão (após 27 tarefas de teste acumuladas) + bundle antigo cacheado → e2e no navegador provou a seção renderizada; melhorias de espaçamento (v0.0.52/53); faxina das tarefas de teste recomendada.
 - 2026-10-14 · [champion] · Task T1.9 concluída: fila individual, vencidos e bloqueados (v0.0.48, QA ok). CA-1-024/025 provados GREEN/RED do zero + revalidação (transição de estado na fila: pendente→concluída com contagens batendo); teste humano aprovado ("Testei e funcionou"). Fila = filtro pelo token (ninguém vê fila alheia), leitura pura. SPEC-1-004 COMPLETA (CA-1-019..025).
 - 2026-10-14 · [champion] · Task T1.8 concluída: bloqueio, retorno para correção e handoff idempotente (v0.0.47, QA ok). CA-1-021/022/023 provados RED/GREEN do zero + revalidação completa; teste humano aprovado ("Testei e funcionou"). Handoff manual e automático (transição) idempotentes — retry identificado, 0 duplicatas, tentativa conservada na auditoria.
 - 2026-10-13 · [verificação] · DEBUG task T1.8: pod servia hooks antigos com QA verde (rota de handoff 404, status bloqueada recusado com mensagem antiga) → causa raiz: cache de hooks por arquivo (patch não recarrega) → corrigido com reescrita completa dos hooks (v0.0.44/45/46); regra registrada.

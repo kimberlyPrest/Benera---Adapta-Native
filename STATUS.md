@@ -1,7 +1,7 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 10 de 16 tasks concluídas (T1.1–T1.10, 63%); próxima elegível: T1.11 (fecha a SPEC-1-005)
+**Estado:** 10 de 16 tasks concluídas (T1.1–T1.10, 63%); T1.11 implementada (v0.0.54), aguardando teste humano
 **Atualizado em:** 2026-10-22
 
 ## Ambiente e progresso
@@ -21,8 +21,9 @@
 - **T1.8 concluída (2026-10-14):** bloqueio, retorno e handoff idempotente — migração 0013 (handoffs com handoff_key ÚNICA + campos de bloqueio/retorno na task + 5 eventos de auditoria), hook handoff-criar (1ª chamada 201, retry 200 sem duplicata, tentativa conservada), handoff automático na transição (chave determinística etapa:{projeto}:{destino}), tarefas-atualizar com bloqueio (motivo+dono+data obrigatórios, recusa sem alterar) e retorno para correção (motivo obrigatório, responsável preservado), tarefas-listar expõe bloqueio, UI com formulário de bloqueio/badge/Devolução. Debug crítico: cache de hooks no pod é POR ARQUIVO (patch não recarrega; reescrita completa força reload — v0.0.44/45/46). Teste humano aprovado. CA-1-021..023 com evidência.
 - **T1.9 concluída (2026-10-14):** fila individual — hook fila-listar (GET /backend/v1/minhas-tarefas: as PRÓPRIAS tarefas do usuário autenticado em todos os projetos com vínculo e ativos; filtro sempre pelo token, query ignorada; contagens por estado; atraso com fuso BRT; fila é LEITURA) e tela MinhaFila (/fila: 4 blocos Vencidas·Bloqueadas·Pendentes·Concluídas com contagens no banner, card com projeto/etapa/prazo/evidência/badges, link para o cartão 360; botão "Minha fila" no Dashboard para todos os papéis). Revalidação do zero: transição de estado provada (pendente→concluída com contagens 3→2 e 5→6). Teste humano aprovado. CA-1-024/025 com evidência. SPEC-1-004 COMPLETA.
 - **T1.10 concluída (2026-10-22):** workspace interno — migração 0014 (workspace_items com tipo TEXT validado no hook + 4 eventos de auditoria), hooks workspace-criar/listar/atualizar (validação por tipo: nota/comentário exigem título+conteúdo, documento exige origem, entrega exige destinatário+data; entrega NÃO se edita; inativar preserva evento), UI com 4 sub-abas no cartão 360. Debug no teste: seção ficava no fim do cartão após 27 tarefas de teste (descobribilidade) + bundle cacheado — e2e no navegador provou a seção; espaçamento melhorado (v0.0.52/53). Teste humano aprovado no reteste. CA-1-026/027/028 com evidência.
-- T1.11 e demais tasks mantêm suas dependências.
+- **T1.11 implementada (2026-10-22, v0.0.54, QA ok) — aguardando teste humano:** permissões herdadas + fallback manual. CA-1-029 provado: revisor sem vínculo → 403 nos 3 endpoints do workspace + timeline + requisição direta à coleção (regras nulas), 4 eventos access_denied auditados; ciclo de herança completo (admin concede → revisor lê 200; admin revoga → 403 de volta; estado da fixture restaurado). CA-1-030 construído: migração 0015 (origem_pendente bool sem required — lição 0012 + evento workspace_completado), documento sem URL nasce PENDENTE (fallback manual, hint "registro manual, sem integração automática"), badge âmbar ORIGEM PENDENTE na aba Docs/Links, edição que preenche origem completa o item (pendente limpa + evento workspace_completado). Edição concorrente (caminho de erro da SPEC) provada: última escrita vence, 2 edições auditadas com atores distintos — documentado como limitação da construção mínima. Regressão geral OK (fila/esteira/kanban/preview).
+- T1.12 e demais tasks mantêm suas dependências.
 
 ## Próxima ação
 
-Champion solicita a próxima task quando quiser (T1.11 é a elegível por dependência — fecha a SPEC-1-005).
+Teste humano da T1.11 pendente: /projetos → PROJ-F1-001 → Workspace → aba Docs/Links → badge ORIGEM PENDENTE no item "Política de comissionamento 2026 (aguardando link)" → opcional: editar e preencher a URL (badge some, timeline registra workspace_completado). Após aprovação, T1.12 é a próxima elegível.
