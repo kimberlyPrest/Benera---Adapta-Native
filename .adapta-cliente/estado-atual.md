@@ -1,12 +1,12 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T1.12
+- task_id: T1.13
 - champion: Fábio Forcassin
 - spec: 04_fase-atual/specs/spec-1-006.md
-- etapa: concluida
-- autorizacao_implementacao: confirmada — 2026-10-23 11:39, champion: "pode"
-- teste_humano: aprovado — 2026-10-23 14:39, champion: "Aprovar T1.12 e fechar o CA-1-031"
-- verificacao_automatica: passou — v0.0.56 provas + v0.0.57 fix filtros + v0.0.58 badge; revalidação do zero na v0.0.58 (agregados 3/3/3/3; 5 filtros batendo; RED escopo; regressão)
-- ultima_acao: fechamento documental e sincronização do repo
-- proxima_acao: aguardar novo pedido do champion (T1.13 é a próxima elegível — touch time/espera/ciclo/baseline)
-- atualizado_em: 2026-10-23T14:45:00-03:00
+- etapa: aguardando_teste_humano
+- autorizacao_implementacao: confirmada — 2026-10-23 14:59, champion: "pode"
+- verificacao_automatica: passou — v0.0.59→62 (32fe365→f7df0e7), QA ok; RED 403/400; touch/espera distintas; baseline 17.8d com amostra e 5 limitações + nota anti-ganho; determinismo; append-only; bug do ciclo (ZZ) corrigido em v0.0.62; e2e visual /painel + DOM do cartão
+- teste_humano: pendente — roteiro: /projetos → PROJ-F1-001 → seção Tempo (apontar minutos+motivo) → /painel → Tempo e baseline (ciclo/touch/espera + card baseline)
+- ultima_acao: implementação + provas + bug do ciclo corrigido + e2e visual
+- proxima_acao: aguardar teste humano do champion (após aprovação, T1.14 — exportação sanitizada + auditoria, fecha a SPEC-1-006)
+- atualizado_em: 2026-10-23T16:20:00-03:00
