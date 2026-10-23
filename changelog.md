@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-10-23
+- 2026-10-23 · [champion] · Task T1.11 concluída: permissões herdadas, timeline e fallback manual (v0.0.55, QA ok). CA-1-029/030 provados RED/GREEN/REGRESSÃO do zero + revalidação completa; teste humano aprovado ("Aprovar T1.11 e fechar a SPEC-1-005"). E2E pela UI: criar documento sem URL → badge ORIGEM PENDENTE → editar preencher URL → badge some → workspace_completado. SPEC-1-005 COMPLETA (CA-1-026..030).
 - 2026-10-23 · [champion] · Faxina autorizada pelo champion e executada (migração 0016, v0.0.55, QA ok): 27 tarefas de teste removidas de PROJ-F1-001 (cascade em task_items/handoffs; auditoria e workspace preservados; projetos reais STARIAN-001/PROJETO_KLABIN_001 intactos; fila do consultor 25→3). E2E visual no preview: TAREFAS (0) + badge ORIGEM PENDENTE renderizado na aba Docs/Links — descobribilidade resolvida.
 
 ## 2026-10-22
