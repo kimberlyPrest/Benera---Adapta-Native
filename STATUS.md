@@ -2,7 +2,7 @@
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
 **Estado:** 10 de 16 tasks concluídas (T1.1–T1.10, 63%); T1.11 implementada (v0.0.54), aguardando teste humano
-**Atualizado em:** 2026-10-22
+**Atualizado em:** 2026-10-23
 
 ## Ambiente e progresso
 
@@ -22,6 +22,7 @@
 - **T1.9 concluída (2026-10-14):** fila individual — hook fila-listar (GET /backend/v1/minhas-tarefas: as PRÓPRIAS tarefas do usuário autenticado em todos os projetos com vínculo e ativos; filtro sempre pelo token, query ignorada; contagens por estado; atraso com fuso BRT; fila é LEITURA) e tela MinhaFila (/fila: 4 blocos Vencidas·Bloqueadas·Pendentes·Concluídas com contagens no banner, card com projeto/etapa/prazo/evidência/badges, link para o cartão 360; botão "Minha fila" no Dashboard para todos os papéis). Revalidação do zero: transição de estado provada (pendente→concluída com contagens 3→2 e 5→6). Teste humano aprovado. CA-1-024/025 com evidência. SPEC-1-004 COMPLETA.
 - **T1.10 concluída (2026-10-22):** workspace interno — migração 0014 (workspace_items com tipo TEXT validado no hook + 4 eventos de auditoria), hooks workspace-criar/listar/atualizar (validação por tipo: nota/comentário exigem título+conteúdo, documento exige origem, entrega exige destinatário+data; entrega NÃO se edita; inativar preserva evento), UI com 4 sub-abas no cartão 360. Debug no teste: seção ficava no fim do cartão após 27 tarefas de teste (descobribilidade) + bundle cacheado — e2e no navegador provou a seção; espaçamento melhorado (v0.0.52/53). Teste humano aprovado no reteste. CA-1-026/027/028 com evidência.
 - **T1.11 implementada (2026-10-22, v0.0.54, QA ok) — aguardando teste humano:** permissões herdadas + fallback manual. CA-1-029 provado: revisor sem vínculo → 403 nos 3 endpoints do workspace + timeline + requisição direta à coleção (regras nulas), 4 eventos access_denied auditados; ciclo de herança completo (admin concede → revisor lê 200; admin revoga → 403 de volta; estado da fixture restaurado). CA-1-030 construído: migração 0015 (origem_pendente bool sem required — lição 0012 + evento workspace_completado), documento sem URL nasce PENDENTE (fallback manual, hint "registro manual, sem integração automática"), badge âmbar ORIGEM PENDENTE na aba Docs/Links, edição que preenche origem completa o item (pendente limpa + evento workspace_completado). Edição concorrente (caminho de erro da SPEC) provada: última escrita vence, 2 edições auditadas com atores distintos — documentado como limitação da construção mínima. Regressão geral OK (fila/esteira/kanban/preview).
+- **Faxina autorizada executada (2026-10-23, migração 0016, v0.0.55, QA ok):** 27 tarefas de teste removidas de PROJ-F1-001 (cascade task_items/handoffs; STARIAN-001 e PROJETO_KLABIN_001 intactos; audit_log append-only preservado; workspace do champion preservado). Fila do consultor 25→3 (restantes são de projetos reais). E2E visual no preview provou: TAREFAS (0) no cartão limpo + badge ORIGEM PENDENTE renderizado na aba Docs/Links — causa-raiz da descobribilidade eliminada.
 - T1.12 e demais tasks mantêm suas dependências.
 
 ## Próxima ação

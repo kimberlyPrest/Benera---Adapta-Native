@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-10-23
+- 2026-10-23 · [champion] · Faxina autorizada pelo champion e executada (migração 0016, v0.0.55, QA ok): 27 tarefas de teste removidas de PROJ-F1-001 (cascade em task_items/handoffs; auditoria e workspace preservados; projetos reais STARIAN-001/PROJETO_KLABIN_001 intactos; fila do consultor 25→3). E2E visual no preview: TAREFAS (0) + badge ORIGEM PENDENTE renderizado na aba Docs/Links — descobribilidade resolvida.
+
 ## 2026-10-22
 - 2026-10-22 · [implementação] · Task T1.11 implementada (v0.0.54, QA ok) — permissões herdadas e fallback manual. CA-1-029: RED provado (revisor sem vínculo 403 nos 3 endpoints + timeline + coleção direta, auditado); ciclo de herança conceder→lê→revogar→403 com estado da fixture restaurado. CA-1-030: migração 0015 (origem_pendente + workspace_completado), documento sem URL nasce pendente, badge âmbar na UI, edição completa o item. Edição concorrente provada (última vence, 2 atores auditados). AGUARDANDO TESTE HUMANO.
 - 2026-10-22 · [champion] · Task T1.10 concluída: notas internas, comentários, documentos/links e registro de entrega (v0.0.53, QA ok). CA-1-026/027/028 provados GREEN/RED do zero + revalidação; teste humano aprovado no reteste ("Retestei e funcionou"). Debug: seção no fim do cartão após 27 tarefas de teste (descobribilidade) + bundle cacheado — e2e no navegador provou; faxina das tarefas de teste recomendada.
