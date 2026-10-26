@@ -1,11 +1,11 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T1.16 (concluída)
+- task_id: T2.1
 - champion: Fábio Forcassin
-- spec: 04_fase-atual/specs/spec-1-007.md
-- etapa: fase1_encerrada
-- aceite_humano: APROVADO — 2026-10-26 17:09, champion: "Aprovar a Fase 1 (CA-1-042)"
-- verificacao_automatica: passou — roteiro integrado 32/32 passos OK; dossiê CA-1-001..041 com evidência; CA-1-042 aprovado e registrado no dossiê
-- ultima_acao: aceite registrado, dossiê atualizado e repo sincronizado
-- proxima_acao: definir o escopo da Fase 2 com o dono (portal do cliente, integração SharePoint, ingestão de transcrições ou IA de proposta — itens fora da Fase 1)
-- atualizado_em: 2026-10-26T17:15:00-03:00
+- spec: 05_fase-2/spec-2-001.md
+- etapa: aguardando_autorizacao
+- decisao_fase2: registrada — 2026-10-26 17:21, champion: Integração SharePoint · fase completa · mesmo projeto 63138; referência: biblioteca "BENERA CORP - Documentos"\CONSULTORIA já acessível em leitura
+- verificacao_automatica: n/a (nada implementado ainda)
+- ultima_acao: escopo e SPECs 2-001..2-005 formalizados no repo
+- proxima_acao: autorização da T2.1 → device flow com o dono (re-consentimento Sites.ReadWrite.All) + provas de upload/download em _TESTE_FASE2
+- atualizado_em: 2026-10-26T17:35:00-03:00
