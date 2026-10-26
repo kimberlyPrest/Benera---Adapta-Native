@@ -1,12 +1,11 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T1.13
+- task_id: T1.14
 - champion: Fábio Forcassin
 - spec: 04_fase-atual/specs/spec-1-006.md
-- etapa: concluida
-- autorizacao_implementacao: confirmada — 2026-10-23 14:59, champion: "pode"
-- teste_humano: aprovado — 2026-10-26 10:11, champion: "Aprovar T1.13 e fechar CA-1-032/033/037"
-- verificacao_automatica: passou — v0.0.59→62; revalidação do zero na v0.0.62 (RED 403/400; touch/espera distintas; baseline 20.6d BRT amostra 3·2·273 + nota anti-ganho; determinismo; append-only; limpeza touch 0; regressão)
-- ultima_acao: fechamento documental e sincronização do repo
-- proxima_acao: aguardar novo pedido do champion (T1.14 é a próxima elegível — exportação sanitizada + auditoria, fecha a SPEC-1-006)
-- atualizado_em: 2026-10-26T10:15:00-03:00
+- etapa: aguardando_teste_humano
+- autorizacao_implementacao: confirmada — 2026-10-26 10:18, champion: "pode"
+- verificacao_automatica: passou — v0.0.63 QA ok; provas RED/GREEN/CA-1-036/determinismo/limpeza/regressão; sanitização "=1+1" → '=1+1 provada no CSV e no JSON; config 500→300→500 reversível e auditada; e2e visual login → dashboard → /painel
+- ultima_acao: implementação concluída e provada; sync do repo
+- proxima_acao: teste humano do champion pela UI (/painel → Exportar CSV/JSON); aprovação fecha CA-1-034/035/036 e a SPEC-1-006
+- atualizado_em: 2026-10-26T10:45:00-03:00
