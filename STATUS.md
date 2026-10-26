@@ -1,17 +1,25 @@
 # Status
 
 **Fase atual:** Fase 1 — Central operacional manual e baseline
-**Estado:** 16 de 16 tasks concluídas (T1.1–T1.16, 100%); roteiro integrado 32/32; dossiê CA a CA gerado; **aguardando aceite humano (CA-1-042) para encerrar a Fase 1**
+**Estado:** **ENCERRADA** — 16/16 tasks concluídas (T1.1–T1.16); 42/42 critérios de aceite fechados (CA-1-001..042); 7/7 SPECs completas; aceite humano registrado 2026-10-26 17:09 (dono: "Aprovar a Fase 1 (CA-1-042)")
 **Atualizado em:** 2026-10-26
 
 ## Ambiente e progresso
 
 - Ambiente de implementação/homologação: Skip, projeto **63138** (v0.0.63, QA ok). Produção não autorizada nesta liberação.
-- **T1.1–T1.15 concluídas (2026-10-05 a 2026-10-26, v0.0.2→63):** histórico completo por task no changelog.
-- **T1.16 concluída (2026-10-26):** roteiro integrado executado ponta a ponta (CA-1-038) — 32/32 passos OK, do login à exportação, sem alterar contrato de SPEC: login (2) · cliente 201 + RED duplicado 400 + consultor 403 · projeto 201 + RED duplicado 400 · cartão 360 · edição auditada · transição com handoff automático · RED transição para trás 400 · RED critério sem kickoff 400 · transição válida com kickoff · tarefa c/ checklist 201 · RED conclusão c/ item obrigatório pendente 400 · RED bloqueio incompleto 400 · bloqueio completo · liberação · conclusão com checklist · fila do consultor · handoff idempotente (201 → 200 retry, mesma task, retry_count 1) · nota + documento pendente + completamento (CA-1-030) · painel + filtro URL-encoded · export CSV · RED consultor 403 · timeline · auditoria · inativação preservando histórico. Desvio inicial do S26 era bug do script de prova (acento sem URL-encoding), reprovado: 200. Auditoria registrou a sequência completa (handoff_created, handoff_retry, task_completed, workspace_created/completado, painel_consulta, export_realizada, access_denied).
-- **Dossiê de aceite (CA-1-039/041):** artifacts/t116-dossie-aceite-fase1.md — CA-1-001..041 com evidência individual (task aprovada + passo do roteiro); CA-1-040 provado pela varredura PII da T1.15 (5 padrões, 0 achados); CA-1-042 **PENDENTE** (aceite humano — decisão do dono); dívidas declaradas (templates de e-mail com host do preview; edição concorrente = última escrita vence; duplicado KLABIN inativável pela tela).
-- Fixture: PILOTO-F1-001 (T1.15) permanece ativo para demonstração; ROTEIRO-F1-001 inativado após a prova com histórico preservado (CA-1-011 fresco).
+- **T1.1–T1.13 concluídas (2026-10-05 a 2026-10-26, v0.0.2→62):** histórico completo por task no changelog.
+- **T1.14 concluída (v0.0.63):** exportação sanitizada + auditoria (CA-1-034/035/036); teste humano aprovado ("vamos em frente"). SPEC-1-006 COMPLETA.
+- **T1.15 concluída:** fixture e projeto-piloto (CA-1-039/040) — PILOTO-F1-001 configurado; snapshot sanitizado com varredura PII de 5 padrões: 0 achados.
+- **T1.16 concluída (CA-1-038..041):** roteiro integrado 32/32 passos OK do login à exportação (RED paths: duplicados 400, consultor 403, transição para trás 400, critério sem kickoff 400, conclusão com item obrigatório pendente 400, bloqueio incompleto 400, consultor exporta 403; handoff idempotente provado: 201 → 200 retry com a mesma task). Dossiê CA a CA: artifacts/t116-dossie-aceite-fase1.md — CA-1-001..041 com evidência individual. Desvio inicial do S26 = bug do script de prova (URL-encoding do acento), reprovado: 200.
+- **CA-1-042 APROVADO (2026-10-26 17:09):** aceite humano registrado pelo dono — Fase 1 encerrada.
+
+## Dívidas rastreadas (próxima fase)
+
+- Templates de e-mail com host do preview — reverter quando a produção for publicada (T1.1).
+- Edição concorrente de workspace = última escrita vence (documentado na T1.11).
+- Duplicado BENERA-KLABIN-OO1/PROJETO_KLABIN_001 inativável pela tela (T1.3).
+- Ids de itens de checklist não expostos na listagem de tarefas (limitação de evidência, T1.16).
 
 ## Próxima ação
 
-**Aceite humano (CA-1-042):** dono revisa o dossiê e aprova ou reprova a Fase 1. Reprovação = itens devolvidos para correção sem marcar a fase como concluída (CA-1-041).
+Definir o escopo da Fase 2 com o dono (portal do cliente, integração SharePoint, ingestão de transcrições ou IA de proposta — itens explicitamente FORA da Fase 1).
