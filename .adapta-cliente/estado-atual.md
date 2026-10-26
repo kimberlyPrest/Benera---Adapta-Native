@@ -1,11 +1,10 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T2.4 (implementada — aguardando teste humano)
+- task_id: T2.5 (roteiro + dossiê executados — aguardando aceite humano da Fase 2)
 - champion: Fábio Forcassin
-- spec: 05_fase-2/spec-2-004.md (upload auditado para a pasta do projeto)
-- etapa: t24_aguardando_teste_humano
-- teste_humano: pendente
-- verificacao_automatica: passou — v0.0.80: RED projeto sem sp_folder 403 auditado; nome inválido/tamanho fora da régua 400 auditado; GREEN upload completo do consultor (upload session server-side → PUT com Content-Range 201 → finalizar confirma no Graph, tamanho íntegro 44 B, item vinculado sp_caminho+sp_weburl+origem_url, auditado workspace_upload); zero token; regressão 200
-- ultima_acao: implementação + provas + e2e visual + limpeza dos itens de teste
-- proxima_acao: teste humano do dono (formulário de documento → Enviar arquivo); depois T2.5 (roteiro integrado + dossiê + aceite da Fase 2)
-- atualizado_em: 2026-10-26T19:25:00-03:00
+- etapa: fase2_aguardando_aceite (CA-2-021)
+- teste_humano: T2.4 aprovada pelo dono (teste real com upload de docx 57,6 KB, item vinculado confirmado no cartão)
+- verificacao_automatica: passou — roteiro integrado 29/29 passos OK (login, escopo, vínculo, upload, auditoria, regressão, limpeza)
+- ultima_acao: dossiê de aceite da Fase 2 gerado (artifacts/t25-dossie-aceite-fase2.md)
+- proxima_acao: aceite do dono (CA-2-021) encerra a Fase 2; depois escopo da Fase 3
+- atualizado_em: 2026-10-26T19:45:00-03:00
