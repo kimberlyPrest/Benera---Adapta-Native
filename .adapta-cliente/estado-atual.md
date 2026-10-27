@@ -1,10 +1,11 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T3.1 + T3.2 (implementadas, 3 bugs de UI corrigidos — aguardando teste humano)
+- task_id: T3.4 (roteiro + dossiê executados — aguardando aceite humano da Fase 3)
 - champion: Fábio Forcassin
 - fase: 3 — Transcrições de reuniões (100% nativo Skip)
-- etapa: t31_t32_aguardando_teste_humano (v0.0.96)
-- verificacao_automatica: passou — transcrição real do STARIAN-001 analisada; painel renderiza resumo + 3 decisões + 3 compromissos + 3 riscos + 3 próximos passos; e2e visual confirma
-- bugs de UI corrigidos: (1) Workspace era a última seção do cartão → atalhos focam a seção (v0.0.94); (2) dropdown de Tipo não tinha Transcrição e o campo de texto só aparecia para nota/comentário (v0.0.95); (3) a análise renderizava DEPOIS do texto inteiro da transcrição → agora vem primeiro e aberta, texto bruto recolhido em details (v0.0.96)
-- proxima_acao: teste humano do dono; depois T3.3 (agente conversacional) e T3.4 (roteiro + dossiê)
-- atualizado_em: 2026-10-27T14:35:00-03:00
+- etapa: fase3_aguardando_aceite
+- verificacao_automatica: passou — roteiro integrado 24/24 (login, ingestão RED/GREEN, escopo, análise RED/GREEN, persistência, re-análise, auditoria, isolamento, regressão F1+F2, limpeza)
+- escopo aprovado pelo champion (27/10): fecha com T3.1+T3.2+T3.4; T3.3 (agente conversacional) ADIADA; calibração do motor = dívida com gatilho (5 transcrições reais)
+- ultima_acao: dossiê de aceite da Fase 3 em artifacts/t34-dossie-aceite-fase3.md
+- proxima_acao: aceite do champion encerra a Fase 3
+- atualizado_em: 2026-10-27T18:15:00-03:00
