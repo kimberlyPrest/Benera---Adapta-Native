@@ -1,28 +1,27 @@
 # Status
 
-**Fase atual:** Fase 2 — ENCERRADA (2026-10-26, aceite CA-2-021)
-**Estado:** aguardando decisão do escopo da Fase 3
-**Atualizado em:** 2026-10-26
+**Fase atual:** Fase 3 — Transcrições de reuniões (100% nativo Skip, decisão do dono 27/10)
+**Estado:** T3.1 (ingestão) e T3.2 (análise IA) implementadas — aguardando teste humano; T3.3 e T3.4 pendentes
+**Atualizado em:** 2026-10-27
 
 ## Fase 2 — ENCERRADA (26/10/2026)
 
-5/5 tasks · 20 CAs + aceite da fase · roteiro integrado 29/29 · v0.0.80. Dossiê: `artifacts/t25-dossie-aceite-fase2.md`.
+5/5 tasks · 20 CAs + aceite · roteiro 29/29 · v0.0.80. Dossiê: artifacts/t25-dossie-aceite-fase2.md.
 
-- T2.1 escrita no SharePoint (device flow do dono) ✓
-- T2.2 navegador de arquivos server-side ✓
-- T2.2b escopo por projeto (regra do dono: admin 100%, consultor só pastas alocadas) ✓
-- T2.3 vínculo workspace ↔ SharePoint (fecha badge ORIGEM PENDENTE) ✓
-- T2.4 upload auditado (destino fixo = pasta mapeada pelo admin; teste real do dono) ✓
-- T2.5 roteiro 29/29 + dossiê ✓ · aceite CA-2-021 ✓
+## Fase 3 — em andamento
 
-## Dívidas rastreadas (herdadas para a próxima fase)
+- **Decisão do dono (27/10):** transcrições de reuniões, motor 100% nativo Skip ($ai.chat no hook + agente nativo para conversa — sem chave externa; aliases fast/reasoning verificados no guia da plataforma).
+- **T3.1 implementada (v0.0.82):** ingestão — tipo "transcricao" no workspace (texto ≥ 50 chars obrigatório), aba Transcrições no cartão, auditoria transcricao_criada. Migração 0023.
+- **T3.2 implementada (v0.0.88):** análise IA server-side — hook POST /workspace/{id}/analisar chama $ai.chat (alias fast) com prompt de analista sênior (resumo, decisões, compromissos com responsável/prazo, riscos, próximos passos em JSON); resultado persistido na coleção NOVA transcricao_analises (0024) e mesclado na listagem; re-análise permitida; auditado transcricao_analisada. UI: botão Analisar/Re-analisar + painel da análise no item.
+- **T3.3 (pendente):** agente analista conversacional ($ai.agent com tools do projeto) — consultor pergunta e cruza dados.
+- **T3.4 (pendente):** roteiro integrado + dossiê + aceite da Fase 3.
 
-1. Fixture u-revisor 401 — RED sem vínculo por via indireta (F2).
-2. Projetos sem sp_folder → consultor recebe 403 orientado a pedir mapeamento (F2).
-3. Picker do SharePoint no modo edição do item — unificar em drawer (rodada de UX).
-4. Arquivos de prova em _TESTE_FASE2 — limpar quando a fase for arquivada.
-5. (F1) Templates de e-mail c/ host do preview · edição concorrente = última escrita · duplicado KLABIN inativável pela tela · ids de checklist não expostos.
+## Lições técnicas (Fase 3)
 
-## Candidatos à Fase 3
+- CONFIRMADO de novo: migration que ADICIONA CAMPO em coleção existente não persiste na instância viva (0023 an_* em workspace_items — set() silenciosamente descartado). Coleção NOVA persiste (0024 transcricao_analises). Workaround definitivo: análise em coleção própria 1:1 por item.
+- Hook novo em arquivo novo: 404 na primeira versão (v0.0.78 padrão) — reescrita força re-registro.
+- Patch em hook existente não recarrega — reescrever o arquivo inteiro.
 
-Portal do cliente · transcrições de reuniões (pré-requisito SharePoint pronto) · timesheet avançado · organogramas.
+## Dívidas rastreadas
+
+- Fixture u-revisor 401 (F2) · projetos sem sp_folder orientam pedir mapeamento (F2) · picker no modo edição (UX) · arquivos de prova em _TESTE_FASE2 a limpar · campos an_* da 0023 não existem no schema vivo (inofensivo — análise vive na 0024; limpar a 0023 na faxina da fase).
