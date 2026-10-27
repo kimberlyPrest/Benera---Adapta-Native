@@ -1,10 +1,10 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T3.1 + T3.2 (implementadas — aguardando teste humano)
+- task_id: T3.1 + T3.2 (implementadas, UX corrigida — aguardando teste humano)
 - champion: Fábio Forcassin
-- fase: 3 — Transcrições de reuniões (decisão do dono 27/10: 100% nativo Skip)
-- etapa: t31_t32_aguardando_teste_humano
-- verificacao_automatica: passou — v0.0.88: T3.1 ingestão (RED 400 sem texto/tipo inválido; GREEN criação + aba + auditoria transcricao_criada); T3.2 análise IA ($ai.chat alias fast; RED 400 não-transcrição; GREEN análise estruturada persistida em transcricao_analises e mesclada na listagem; auditoria transcricao_analisada; regressão 200)
-- ultima_acao: e2e visual do painel da análise no cartão (screenshot artifacts/t32-analise-ui.png)
-- proxima_acao: teste humano do dono (aba Transcrições → Analisar com IA → ver análise); depois T3.3 (agente analista conversacional) e T3.4 (roteiro + dossiê)
-- atualizado_em: 2026-10-27T10:35:00-03:00
+- fase: 3 — Transcrições de reuniões (100% nativo Skip)
+- etapa: t31_t32_aguardando_teste_humano (v0.0.94)
+- verificacao_automatica: passou — RED/GREEN da ingestão e da análise IA; e2e visual do foco de seção
+- ultima_acao: UX de descobribilidade resolvida — atalhos "Ir para Workspace / Ir para Timeline" no topo do cartão FOCAM a seção (escondem Mover etapa + Editar projeto), porque o cartão é longo e o dialog do Radix não rola por script
+- proxima_acao: teste humano do dono (cartão → Ir para Workspace → aba Transcrições → ver análise / Analisar com IA); depois T3.3 (agente conversacional) e T3.4 (roteiro + dossiê)
+- atualizado_em: 2026-10-27T13:45:00-03:00
