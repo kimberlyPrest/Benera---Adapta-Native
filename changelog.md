@@ -57,3 +57,10 @@
 - Kim autorizou implementar a T1.1 no ambiente Skip 63138, preservando seus critérios e o gate de validação da matriz/fixture.
 - Cadastro público e credencial de demonstração exposta registrada como impedimento de homologação, a corrigir sem publicar valores de segredos.
 - Autorização, limites e roteiro de prova em `06_notas/2026-10-02-autorizacao-t1-1.md`. Nenhum código, segredo ou configuração do Skip foi alterado por esta publicação documental.
+
+## 2026-10-30 — Teste do cliente por SPEC (ritmo)
+
+- [CONSULTORIA] Ajuste de ritmo autorizado por Rodrigo em 30/10/2026: o histórico registra testes por task; esse histórico foi preservado e não prova, sozinho, qual versão do plugin está instalada.
+- Ritmo novo: tasks em sequência, cada uma fechando pelas provas automáticas da SPEC (RED, GREEN, REGRESSÃO); o teste do cliente é por SPEC.
+- Arquivos: `AGENTS.md` (seção `## Ritmo e teste do cliente`) e `STATUS.md` (item "Teste do cliente").
+- Nenhuma SPEC foi alterada: as Fases 1, 2 e 3 estão encerradas, com aceite registrado, e o mandato só permite seção nova na fase atual. Nenhum critério, dívida, status ou dossiê foi tocado.

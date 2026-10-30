@@ -2,7 +2,7 @@
 
 **Fase atual:** nenhuma aberta — Fases 1, 2 e 3 ENCERRADAS
 **Estado:** aguardando decisão do escopo da próxima frente
-**Atualizado em:** 2026-10-27 20:17
+**Atualizado em:** 2026-10-30
 
 ## Fases encerradas
 
@@ -17,6 +17,10 @@ Escrita (device flow) · navegador server-side · escopo por projeto (admin 100%
 ### Fase 3 — Transcrições de reuniões (encerrada 27/10)
 T3.1 + T3.2 + T3.4 · roteiro 24/24. Dossiê: `artifacts/t34-dossie-aceite-fase3.md` · v0.0.96.
 Ingestão (tipo transcricao, aba no cartão) · análise IA nativa ($ai.chat alias fast → resumo, decisões com autor, compromissos com responsável/prazo, riscos, próximos passos; coleção nova transcricao_analises) · tudo auditado. **T3.3 (agente conversacional) adiada por decisão do champion.**
+
+## Teste do cliente
+
+Por SPEC, não por task, a partir de 30/10/2026 (regra em `AGENTS.md`). As três fases encerradas mantêm o aceite já registrado e não têm novo teste; a próxima fase aberta recebe a seção `## Teste humano do cliente` em cada SPEC.
 
 ## Dívidas rastreadas
 
